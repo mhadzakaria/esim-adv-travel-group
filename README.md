@@ -33,10 +33,10 @@ This is a Ruby on Rails application for managing Esims.
 
 ### Running Tests
 
-To run the test suite:
+This project uses RSpec for testing. To run the test suite:
 
 ```bash
-rails test
+bundle exec rspec
 ```
 
 ## API Endpoints
