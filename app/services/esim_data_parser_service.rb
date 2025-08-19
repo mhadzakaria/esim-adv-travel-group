@@ -81,7 +81,7 @@ class EsimDataParserService
       data_hash["usage"].to_i
     end.last.clone
     top.merge!(exract_bytes(top["usage"].to_i))
-    top.merge!(usageDate: convert_usage_date(top["usageDate"]))
+    top["usageDate"] = convert_usage_date(top["usageDate"])
     top.delete("usage")
     top
   end
@@ -93,7 +93,7 @@ class EsimDataParserService
       data_hash["usage"].to_i
     end.last.clone
     peak.merge!(exract_bytes(peak["usage"].to_i))
-    peak.merge!(usageDate: convert_usage_date(peak["usageDate"]))
+    peak["usageDate"] = convert_usage_date(peak["usageDate"])
     peak.delete("usage")
     peak
   end

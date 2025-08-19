@@ -21,7 +21,7 @@ default: &default
 
 development:
   <<: *default
-  database: booking_app_ticket_development
+  database: esim_development
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
@@ -53,9 +53,13 @@ development:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-# test:
-#   <<: *default
-#   database: booking_app_ticket_test
+test:
+  <<: *default
+  database: esim_test
+  username: postgres
+  password: postgres
+  host: localhost
+  port: 5432
 
 # # As with config/credentials.yml, you never want to store sensitive information,
 # # like your database password, in your source code. If your source code is
@@ -79,6 +83,6 @@ development:
 # #
 # production:
 #   <<: *default
-#   database: booking_app_ticket_production
-#   username: booking_app_ticket
-#   password: <%= ENV["BOOKING_APP_TICKET_DATABASE_PASSWORD"] %>
+#   database: esim_production
+#   username: esim
+#   password: <%= ENV["ESIM_DATABASE_PASSWORD"] %>
