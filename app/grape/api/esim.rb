@@ -6,10 +6,10 @@ module Api
     resource :esim do
       desc 'Get eSIM summary by CID'
       get :summary do
-        esim_serv = ::Esim.new
-        datas = esim_serv.data
+        datas = JSON.load_file("public/mock_orders_5.json")
         record = datas.select { |e| e.dig("data", "cid").eql?(params[:cid]) }.first
 
+        # cid tidak ditemukan → 404 { "error": "cid not found" }.
         error!({ error: "cid not found" }, 404) if record.blank? # handle jika data tidak ditemukan
 
         present record, with: ::Api::Entities::Esim

@@ -19,10 +19,6 @@ module Api
         parser(obj).active_days
       end
 
-      expose :planDays do |obj|
-        parser(obj).plan_days
-      end
-
       expose :totalMB do |obj|
         parser(obj).exract_bytes(parser(obj).sum_usage_bytes)["mb"]
       end
@@ -45,6 +41,10 @@ module Api
 
       expose :peakDate do |obj|
         parser(obj).peakDate
+      end
+
+      expose :planDays do |obj|
+        parser(obj).plan_days
       end
 
       expose :avgPerActiveDay do |obj|
