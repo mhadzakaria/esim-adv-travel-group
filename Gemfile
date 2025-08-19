@@ -69,6 +69,10 @@ end
 gem "devise", "~> 4.9"
 
 gem 'grape', '~> 1.6.2'
+gem 'grape-entity', '~> 0.10.2'
+gem 'grape-kaminari', '~> 0.4.3'
 gem 'grape_on_rails_routes', '~> 0.3.2'
 gem 'grape-route-helpers', '~> 2.1.0'
+gem 'grape-swagger', '~> 1.5.0'
+gem 'grape-swagger-entity', '~> 0.5.1'
 gem 'rack', '2.2.5'
