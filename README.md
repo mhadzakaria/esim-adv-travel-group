@@ -1,51 +1,49 @@
-# README
+# Esim
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Ruby on Rails application for managing Esims.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
----
-
-## Grape API
+## Getting Started
 
 ### Installation
 
-1.  Install the required gems:
+1.  **Clone the repository:**
+    ```bash
+    git clone <repository_url>
+    cd esim-adv-travel-group
+    ```
 
+2.  **Install dependencies:**
     ```bash
     bundle install
     ```
 
-### Running the application
+3.  **Set up the database:**
+    ```bash
+    rails db:migrate
+    ```
+    (If you need seed data, you might also run `rails db:seed`)
 
-1.  Start the Rails server:
+### Running the Application
 
+1.  **Start the Rails server:**
     ```bash
     rails server
     ```
+    The application will typically run on `http://localhost:3000`.
 
-### API Endpoints
+### Running Tests
 
-#### Get eSIM Summary
+To run the test suite:
+
+```bash
+rails test
+```
+
+## API Endpoints
+
+The application exposes a Grape API.
+
+### Get eSIM Summary
 
 *   **Endpoint:** `GET /api/v1/esim/summary`
 *   **Description:** Retrieves the summary of an eSIM.
