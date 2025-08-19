@@ -67,3 +67,8 @@ group :test do
 end
 
 gem "devise", "~> 4.9"
+
+gem 'grape', '~> 1.6.2'
+gem 'grape_on_rails_routes', '~> 0.3.2'
+gem 'grape-route-helpers', '~> 2.1.0'
+gem 'rack', '2.2.5'
