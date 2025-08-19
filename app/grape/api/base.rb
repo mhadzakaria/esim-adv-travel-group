@@ -4,6 +4,8 @@ module Api
     prefix :api
     format :json
 
+    include Api::Modules::ErrorsHandlers
+
 		mount Api::Esim
   end
 end

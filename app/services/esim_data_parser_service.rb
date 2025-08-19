@@ -11,11 +11,9 @@ class EsimDataParserService
 
   def use_s_date
     timestamp = @data.dig("data", "useSDate")
-    return nil unless timestamp
+    raise ArgumentError.new("Invalid date value") if timestamp.to_i.zero?
 
     Time.at(timestamp.to_i / 1000)
-  rescue TypeError, ArgumentError
-    nil
   end
 
   def startISO
@@ -24,11 +22,9 @@ class EsimDataParserService
 
   def use_e_date
     timestamp = @data.dig("data", "useEDate")
-    return nil unless timestamp
+    raise ArgumentError.new("Invalid date value") if timestamp.to_i.zero?
 
     Time.at(timestamp.to_i / 1000)
-  rescue TypeError, ArgumentError
-    nil
   end
 
   def endISO
@@ -60,11 +56,7 @@ class EsimDataParserService
   end
 
   def convert_usage_date(date)
-    return nil unless date
-
     DateTime.strptime(date, "%Y%m%d")
-  rescue ArgumentError
-    nil
   end
 
   def violations
