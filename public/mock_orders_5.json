@@ -1,0 +1,254 @@
+[
+  {
+    "success": true,
+    "message": "Berhasil mengambil detail order",
+    "data": {
+      "code": 0,
+      "msg": null,
+      "cid": "012345",
+      "useSDate": "1754438400000",
+      "useEDate": "1755302399000",
+      "totalUsage": "4903782710",
+      "esimStatus": 0,
+      "simStatus": 0,
+      "productType": 0,
+      "itemList": [
+        {
+          "usageDate": "20250806",
+          "mcc": "204",
+          "code": "NL",
+          "zhtw": "荷蘭",
+          "enus": "Netherlands",
+          "usage": "649310825"
+        },
+        {
+          "usageDate": "20250809",
+          "mcc": "262",
+          "code": "DE",
+          "zhtw": "德國",
+          "enus": "Germany",
+          "usage": "2392331444"
+        },
+        {
+          "usageDate": "20250810",
+          "mcc": "262",
+          "code": "DE",
+          "zhtw": "德國",
+          "enus": "Germany",
+          "usage": "1862140441"
+        }
+      ],
+      "product_name": "eSIM Eropa Timur Balkan Big Data | 5GB 10 Hari",
+      "attribute_variant": "[{\"variant_id\": \"85\", \"variant_name\": \"10 Hari\", \"variant_value\": null}, {\"variant_id\": \"152\", \"variant_name\": \"5GB\", \"variant_value\": null}]"
+    },
+    "statusCode": 200
+  },
+  {
+    "success": true,
+    "message": "Berhasil mengambil detail order",
+    "data": {
+      "code": 0,
+      "msg": null,
+      "cid": "678901",
+      "useSDate": "1752537600000",
+      "useEDate": "1753142399000",
+      "totalUsage": "2919796224",
+      "esimStatus": 0,
+      "simStatus": 1,
+      "productType": 0,
+      "itemList": [
+        {
+          "usageDate": "20250716",
+          "mcc": "214",
+          "code": "ES",
+          "zhtw": "西班牙",
+          "enus": "Spain",
+          "usage": "163971123"
+        },
+        {
+          "usageDate": "20250719",
+          "mcc": "214",
+          "code": "ES",
+          "zhtw": "西班牙",
+          "enus": "Spain",
+          "usage": "904001193"
+        },
+        {
+          "usageDate": "20250721",
+          "mcc": "214",
+          "code": "ES",
+          "zhtw": "西班牙",
+          "enus": "Spain",
+          "usage": "1851823908"
+        }
+      ],
+      "product_name": "eSIM Europe Unlimited | Prancis Italia Spanyol 7 Hari",
+      "attribute_variant": "[{\"variant_id\": \"90\", \"variant_name\": \"7 Hari\", \"variant_value\": null}, {\"variant_id\": \"160\", \"variant_name\": \"Unlimited\", \"variant_value\": null}]"
+    },
+    "statusCode": 200
+  },
+  {
+    "success": true,
+    "message": "Berhasil mengambil detail order",
+    "data": {
+      "code": 0,
+      "msg": null,
+      "cid": "345678",
+      "useSDate": "1756684800000",
+      "useEDate": "1757116799000",
+      "totalUsage": "4654454594",
+      "esimStatus": 2,
+      "simStatus": 1,
+      "productType": 0,
+      "itemList": [
+        {
+          "usageDate": "20250901",
+          "mcc": "450",
+          "code": "KR",
+          "zhtw": "韓國",
+          "enus": "South Korea",
+          "usage": "717779376"
+        },
+        {
+          "usageDate": "20250902",
+          "mcc": "440",
+          "code": "JP",
+          "zhtw": "日本",
+          "enus": "Japan",
+          "usage": "1495662585"
+        },
+        {
+          "usageDate": "20250903",
+          "mcc": "440",
+          "code": "JP",
+          "zhtw": "日本",
+          "enus": "Japan",
+          "usage": "448340369"
+        },
+        {
+          "usageDate": "20250904",
+          "mcc": "450",
+          "code": "KR",
+          "zhtw": "韓國",
+          "enus": "South Korea",
+          "usage": "465393687"
+        },
+        {
+          "usageDate": "20250905",
+          "mcc": "450",
+          "code": "KR",
+          "zhtw": "韓國",
+          "enus": "South Korea",
+          "usage": "1527278577"
+        }
+      ],
+      "product_name": "eSIM Asia Combo | Japan Korea Taiwan 5 Hari 3GB",
+      "attribute_variant": "[{\"variant_id\": \"101\", \"variant_name\": \"5 Hari\", \"variant_value\": null}, {\"variant_id\": \"200\", \"variant_name\": \"3GB\", \"variant_value\": null}]"
+    },
+    "statusCode": 200
+  },
+  {
+    "success": true,
+    "message": "Berhasil mengambil detail order",
+    "data": {
+      "code": 0,
+      "msg": null,
+      "cid": "987654",
+      "useSDate": "1755648000000",
+      "useEDate": "1756339199000",
+      "totalUsage": "2340391978",
+      "esimStatus": 0,
+      "simStatus": 0,
+      "productType": 0,
+      "itemList": [
+        {
+          "usageDate": "20250820",
+          "mcc": "716",
+          "code": "PE",
+          "zhtw": "秘魯",
+          "enus": "Peru",
+          "usage": "388444264"
+        },
+        {
+          "usageDate": "20250824",
+          "mcc": "730",
+          "code": "CL",
+          "zhtw": "智利",
+          "enus": "Chile",
+          "usage": "1603210608"
+        },
+        {
+          "usageDate": "20250827",
+          "mcc": "732",
+          "code": "CO",
+          "zhtw": "哥倫比亞",
+          "enus": "Colombia",
+          "usage": "348737106"
+        }
+      ],
+      "product_name": "eSIM South America | Brazil Colombia Argentina 10GB 15 Hari",
+      "attribute_variant": "[{\"variant_id\": \"111\", \"variant_name\": \"15 Hari\", \"variant_value\": null}, {\"variant_id\": \"222\", \"variant_name\": \"10GB\", \"variant_value\": null}]"
+    },
+    "statusCode": 200
+  },
+  {
+    "success": true,
+    "message": "Berhasil mengambil detail order",
+    "data": {
+      "code": 0,
+      "msg": null,
+      "cid": "192837",
+      "useSDate": "1757462400000",
+      "useEDate": "1758499199000",
+      "totalUsage": "6907467989",
+      "esimStatus": 2,
+      "simStatus": 0,
+      "productType": 0,
+      "itemList": [
+        {
+          "usageDate": "20250911",
+          "mcc": "530",
+          "code": "NZ",
+          "zhtw": "紐西蘭",
+          "enus": "New Zealand",
+          "usage": "1616942273"
+        },
+        {
+          "usageDate": "20250913",
+          "mcc": "505",
+          "code": "AU",
+          "zhtw": "澳洲",
+          "enus": "Australia",
+          "usage": "1639915144"
+        },
+        {
+          "usageDate": "20250914",
+          "mcc": "530",
+          "code": "NZ",
+          "zhtw": "紐西蘭",
+          "enus": "New Zealand",
+          "usage": "949825838"
+        },
+        {
+          "usageDate": "20250916",
+          "mcc": "530",
+          "code": "NZ",
+          "zhtw": "紐西蘭",
+          "enus": "New Zealand",
+          "usage": "356671447"
+        },
+        {
+          "usageDate": "20250921",
+          "mcc": "505",
+          "code": "AU",
+          "zhtw": "澳洲",
+          "enus": "Australia",
+          "usage": "2344113287"
+        }
+      ],
+      "product_name": "eSIM Oceania | Australia New Zealand Unlimited 30 Hari",
+      "attribute_variant": "[{\"variant_id\": \"120\", \"variant_name\": \"30 Hari\", \"variant_value\": null}, {\"variant_id\": \"300\", \"variant_name\": \"Unlimited\", \"variant_value\": null}]"
+    },
+    "statusCode": 200
+  }
+]
