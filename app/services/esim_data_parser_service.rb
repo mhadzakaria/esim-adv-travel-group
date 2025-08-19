@@ -115,12 +115,14 @@ class EsimDataParserService
   end
 
   def avgPerActiveDay
+    # Angka harus non-negatif
     return {} if active_days.zero?
 
     exract_bytes(sum_usage_bytes / active_days)
   end
 
   def avgPerPlanDay
+    # Angka harus non-negatif
     return {} if plan_days.zero?
 
     exract_bytes(sum_usage_bytes / plan_days)
