@@ -10,29 +10,47 @@ class EsimDataParserService
   end
 
   def use_s_date
-    Time.at(@data.dig("data", "useSDate").to_i / 1000)
+    timestamp = @data.dig("data", "useSDate")
+    return nil unless timestamp
+
+    Time.at(timestamp.to_i / 1000)
+  rescue TypeError, ArgumentError
+    nil
   end
 
   def startISO
-    use_s_date.utc
+    use_s_date&.utc
   end
 
   def use_e_date
-    Time.at(@data.dig("data", "useEDate").to_i / 1000)
+    timestamp = @data.dig("data", "useEDate")
+    return nil unless timestamp
+
+    Time.at(timestamp.to_i / 1000)
+  rescue TypeError, ArgumentError
+    nil
   end
 
   def endISO
-    use_e_date.utc
+    use_e_date&.utc
+  end
+
+  def item_list
+    Array(@data.dig("data", "itemList"))
   end
 
   def active_days
-    Array(@data.dig("data", "itemList")).group_by do |data_hash|
+    return 0 if item_list.empty?
+
+    item_list.group_by do |data_hash|
       data_hash["usageDate"]
     end.keys.count
   end
 
   def sum_usage_bytes
-    Array(@data.dig("data", "itemList")).map do |data_hash|
+    return 0 if item_list.empty?
+
+    item_list.map do |data_hash|
       data_hash["usage"].to_i
     end.sum
   end
@@ -42,19 +60,24 @@ class EsimDataParserService
   end
 
   def convert_usage_date(date)
+    return nil unless date
+
     DateTime.strptime(date, "%Y%m%d")
+  rescue ArgumentError
+    nil
   end
 
   def violations
-    Array(@data.dig("data", "itemList")).select do |data_hash|
+    item_list.select do |data_hash|
       current_date = convert_usage_date(data_hash["usageDate"])
-
-      current_date > use_e_date
+      use_e_date && current_date && (current_date > use_e_date)
     end
   end
 
   def topCountry
-    top = Array(@data.dig("data", "itemList")).sort_by do |data_hash|
+    return {} if item_list.empty?
+
+    top = item_list.sort_by do |data_hash|
       data_hash["usage"].to_i
     end.last.clone
     top.merge!(exract_bytes(top["usage"].to_i))
@@ -64,7 +87,9 @@ class EsimDataParserService
   end
 
   def peakDate
-    peak = Array(@data.dig("data", "itemList")).sort_by do |data_hash|
+    return {} if item_list.empty?
+
+    peak = item_list.sort_by do |data_hash|
       data_hash["usage"].to_i
     end.last.clone
     peak.merge!(exract_bytes(peak["usage"].to_i))
@@ -74,6 +99,8 @@ class EsimDataParserService
   end
 
   def plan_days
+    return 0 unless use_e_date && use_s_date
+
     # + 1 FOR HANDLE START OF DAY TO END OF DAY
     ((use_e_date - use_s_date) / 1.day).to_i + 1
   end
@@ -88,10 +115,14 @@ class EsimDataParserService
   end
 
   def avgPerActiveDay
+    return {} if active_days.zero?
+
     exract_bytes(sum_usage_bytes / active_days)
   end
 
   def avgPerPlanDay
+    return {} if plan_days.zero?
+
     exract_bytes(sum_usage_bytes / plan_days)
   end
 
@@ -104,7 +135,9 @@ class EsimDataParserService
   end
 
   def by_country_aggregate
-    grouped_data = Array(@data.dig("data", "itemList")).group_by do |data_hash|
+    return [] if item_list.empty?
+
+    grouped_data = item_list.group_by do |data_hash|
       data_hash["code"]
     end
 
@@ -124,7 +157,9 @@ class EsimDataParserService
   end
 
   def by_date_aggregate
-    grouped_data = Array(@data.dig("data", "itemList")).group_by do |data_hash|
+    return [] if item_list.empty?
+
+    grouped_data = item_list.group_by do |data_hash|
       data_hash["usageDate"]
     end
 
